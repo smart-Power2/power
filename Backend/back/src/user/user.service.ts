@@ -39,12 +39,9 @@ export class UserService {
   //   },
   // ];
 
-  async findOne(firstName: string): Promise<User | undefined> {
-    // return this.users.find((user) => user.FirstName === firstName);
-    return this.usersRepository.findOne({FirstName: firstName});
-  }
-  async findUser(Email: string): Promise<User | undefined> {
-    return this.usersRepository.findOne(2);
+  async findOne(email: string): Promise<User | undefined> {
+    console.log(email);
+    return this.usersRepository.findOne({ Email: email });
   }
 
   async create(createUserDto: CreateUserDto) {
