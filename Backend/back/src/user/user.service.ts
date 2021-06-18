@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
 
-// import * as { bcrypt } from 'bcrypt'; 
+import * as  bcrypt  from 'bcrypt'; 
 // export type User = any;
 @Injectable()
 export class UserService {
@@ -46,35 +46,46 @@ export class UserService {
     return this.usersRepository.findOne({ email: email });
   }
 
-  async create(createUserDto: CreateUserDto) {
-    const user = new User();
-    user.FirstName = createUserDto.FirstName;
-    user.LastName = createUserDto.LastName;
-    user.email = createUserDto.email;
-    user.phoneNumber = createUserDto.phoneNumber;
-    user.password = createUserDto.password;
-    await this.usersRepository.save(user);
-    return user;
-  }
+  // async create(createUserDto: CreateUserDto) {
+  //   const user = new User();
+  //   user.FirstName = createUserDto.FirstName;
+  //   user.LastName = createUserDto.LastName;
+  //   user.email = createUserDto.email;
+  //   user.phoneNumber = createUserDto.phoneNumber;
+  //   user.password = createUserDto.password;
+  //   await this.usersRepository.save(user);
+  //   return user;
+  // }
 
   // async signup(createUserDto: CreateUserDto) {
+  //   const user = new User();
   //   const saltOrRounds = 10;
   //   const hash = await bcrypt.hash(createUserDto.password, saltOrRounds);
-  //   const emaill = createUserDto.email;
-  //   const findlogin = await  this.userModel.findOne({email : emaill}).exec()
+  //   const email = createUserDto.email;
+  //   const findlogin = await  this.usersRepository.findOne({email : email}).exec()
 
   //     if (findlogin) {
   //       return JSON.stringify({msg : 'This email exists'});
   //     }
 
+  //     // const createdUser = async create(createUserDto: CreateUserDto) {
+  //     //     const user = new User();
+  //     //     user.FirstName = createUserDto.FirstName;
+  //     //     user.LastName = createUserDto.LastName;
+  //     //     user.email = createUserDto.email;
+  //     //     user.phoneNumber = createUserDto.phoneNumber;
+  //     //     user.password = createUserDto.password;
+  //     //     await this.usersRepository.save(user);
+  //     //     return user;
+  //     //   }
 
-  //   const createdUser = this.userModel.create({
-  //     name: createUserDto.name,
-  //     lastname: createUserDto.lastname,
-  //     email: createUserDto.email,
-  //     password: hash,
-  //     status: createUserDto.status,
-  //   });
+  //   // const createdUser = this.usersRepository.create({
+  //   //   FirstName: createUserDto.FirstName,
+  //   //   LastName: createUserDto.LastName,
+  //   //   email: createUserDto.email,
+  //   //   password: hash,
+  //   //   status: createUserDto.status,
+  //   // });
   //   return JSON.stringify({msg : "right"});
   // }
 
