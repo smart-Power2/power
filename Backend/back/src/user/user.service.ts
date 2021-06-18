@@ -41,14 +41,14 @@ export class UserService {
 
   async findOne(email: string): Promise<User | undefined> {
     console.log(email);
-    return this.usersRepository.findOne({ Email: email });
+    return this.usersRepository.findOne({ email: email });
   }
 
   async create(createUserDto: CreateUserDto) {
     const user = new User();
     user.FirstName = createUserDto.FirstName;
     user.LastName = createUserDto.LastName;
-    user.Email = createUserDto.Email;
+    user.email = createUserDto.Email;
     user.phoneNumber = createUserDto.phoneNumber;
     user.password = createUserDto.password;
     await this.usersRepository.save(user);
