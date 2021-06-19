@@ -17,8 +17,14 @@ export class AppController {
   @UseGuards(AuthGuard('local'))
   @Post('auth/login')
   async login(@Request() req) {
+    console.log("req",req.user, req.body)
     return this.authService.login(req.user);
   }
+
+  // @Post("/auth/signup")
+  // signup(@Body() createUserDto: CreateUserDto) {
+  //  return this.userService.signup(createUserDto);
+  // }
   // @Get()
   // getHello(): string {
   //   return this.appService.getHello();

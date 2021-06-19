@@ -10,6 +10,7 @@ import { ExamplesModule } from './examples/examples.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { SignupComponent } from './signup/signup.component';
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
-        ExamplesModule
+        ExamplesModule,
+        MDBBootstrapModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
