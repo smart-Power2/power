@@ -3,6 +3,7 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
+import {FormComponent} from './form/form.component'
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { LoginComponent } from './examples/login/login.component';
@@ -12,6 +13,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
+    { path: 'form',                 component: FormComponent },
     { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'examples/landing',     component: LandingComponent },
     { path: 'examples/login',       component: LoginComponent },

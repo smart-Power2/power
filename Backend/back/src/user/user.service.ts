@@ -9,7 +9,7 @@ import { User } from './user.entity';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>,
+    private userRepository: Repository<User>,
   ) {}
 
   // private readonly users = [
@@ -41,10 +41,10 @@ export class UserService {
 
   async findOne(firstName: string): Promise<User | undefined> {
     // return this.users.find((user) => user.FirstName === firstName);
-    return this.usersRepository.findOne({FirstName: firstName});
+    return this.userRepository.findOne({ FirstName: firstName });
   }
   async findUser(Email: string): Promise<User | undefined> {
-    return this.usersRepository.findOne(2);
+    return this.userRepository.findOne(2);
   }
 
   async create(createUserDto: CreateUserDto) {
@@ -54,20 +54,20 @@ export class UserService {
     user.Email = createUserDto.Email;
     user.phoneNumber = createUserDto.phoneNumber;
     user.password = createUserDto.password;
-    await this.usersRepository.save(user);
+    await this.userRepository.save(user);
     return user;
   }
 
   findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+    return this.userRepository.find();
   }
 
   // findOne(id: number): Promise<User> {
-  //   return this.usersRepository.findOne(id);
+  //   return this.userRepository.findOne(id);
   // }
 
   async remove(id: number): Promise<void> {
-    await this.usersRepository.delete(id);
+    await this.userRepository.delete(id);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

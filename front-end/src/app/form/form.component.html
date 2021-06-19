@@ -1,0 +1,16 @@
+<div class="x">
+    <form class="form-car" [formGroup]="carForm" (ngSubmit)="registerCar()">
+        <input type="text" class="form-control" formControlName="brand" placeholder="name">
+        <input type="text" class="form-control" formControlName="model" placeholder="model">
+        <input type="text" class="form-control" formControlName="engine" placeholder="engine">
+        <input type="number" class="form-control" formControlName="price" placeholder="price">
+        <input type="number" class="form-control" formControlName="seats" placeholder="seats">
+        <input type="number" class="form-control" formControlName="doors" placeholder="doors">
+        <input type="number" class="form-control" formControlName="suitcases" placeholder="suitcases">
+        <input type="text" class="form-control" formControlName="airconditioner" placeholder="airconditioner">
+        <input type="text" class="form-control" formControlName="transmission" placeholder="transmission" >
+        <input type="file" class="form-control" name="file" placeholder="file" (change)="onFileSelected($event)">
+        <button type="submit" class="btn btn-block btn-primary">Submit</button>
+    </form>
+
+</div>
