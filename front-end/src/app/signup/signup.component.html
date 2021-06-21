@@ -1,39 +1,102 @@
-<!-- <p>signup works!</p> -->
-<div class="container">
-	<header>
-		<h1>
-			<a href="#">
-				<img src="http://tfgms.com/sandbox/dailyui/logo-1.png" alt="Authentic Collection"/>
-			</a>
-		</h1>
-	</header>
-	<h1 class="text-center">Register</h1>
-	<form class="registration-form">
-		<label class="col-one-half">
-			<span class="label-text">First Name</span>
-			<input type="text" name="firstName"/>
-		</label>
-		<label class="col-one-half">
-			<span class="label-text">Last Name</span>
-			<input type="text" name="lastName"/>
-		</label>
-		<label>
-			<span class="label-text">Email</span>
-			<input type="text" name="email"/>
-		</label>
-		<label class="password">
-			<span class="label-text">Password</span>
-			<button class="toggle-visibility" title="toggle password visibility" tabindex="-1">
-				<span class="glyphicon glyphicon-eye-close"></span>
-			</button>
-			<input type="password" name="password"/>
-		</label>
-		<label class="checkbox">
-			<input type="checkbox" name="newsletter"/>
-			<span>Sign me up for the weekly newsletter.</span>
-		</label>
-		<div class="text-center">
-			<button class="submit" name="register">Sign Me Up</button>
-		</div>
-	</form>
-</div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form action="#" (ngSubmit)="OnSubmit()">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input
+                type="text"
+                placeholder="Enter your first name"
+                name="FirstName"
+                [(ngModel)]="FirstName"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                name="LastName"
+                [(ngModel)]="LastName"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                name="email"
+                [(ngModel)]="email"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                type="text"
+                placeholder="Enter your number"
+                name="phoneNumber"
+                [(ngModel)]="phoneNumber"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="text"
+                placeholder="Enter your password"
+                name="password"
+                [(ngModel)]="password"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input
+                type="text"
+                placeholder="Confirm your password"
+                name="type"
+                [(ngModel)]="type"
+                required
+              />
+            </div>
+          </div>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" />
+            <input type="radio" name="gender" id="dot-2" />
+            <input type="radio" name="gender" id="dot-3" />
+            <span class="gender-title">Are you a company ?</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Yes</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">No</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

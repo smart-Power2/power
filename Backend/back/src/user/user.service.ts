@@ -53,6 +53,7 @@ export class UserService {
     user.email = createUserDto.email;
     user.phoneNumber = createUserDto.phoneNumber;
     user.password = createUserDto.password;
+    user.type = createUserDto.type;
     await this.usersRepository.save(user);
     return user;
   }
@@ -85,6 +86,7 @@ export class UserService {
       email: createUserDto.email,
       password: hash,
       phoneNumber: createUserDto.phoneNumber,
+      type: createUserDto.type
     });
     return JSON.stringify({ msg: 'right' });
   }
