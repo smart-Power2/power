@@ -5,6 +5,9 @@ import {
   PathLocationStrategy
 } from "@angular/common";
 import { Router } from "@angular/router";
+import { UserService } from "../../services/user.service";
+// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from "ngx-toastr";
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
@@ -15,15 +18,20 @@ export class NavbarComponent implements OnInit {
   private sidebarVisible: boolean;
 
   constructor(
+    private userService: UserService,
     public location: Location,
     private element: ElementRef,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.sidebarVisible = false;
   }
 
   btnClick = function () {
     this.router.navigateByUrl("/signup");
+  };
+  bClick = function () {
+    this.router.navigateByUrl("/examples/login");
   };
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
@@ -63,5 +71,13 @@ export class NavbarComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  Logout() {
+    this.toastr.success("Logged out!", "", {
+      timeOut: 4000
+    });
+    this.userService.Logout();
+    this.router.navigate(["/examples/login"]);
   }
 }

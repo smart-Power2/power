@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   email: string;
   phoneNumber: number;
   password: string;
-  type: "company";
+  type: string;
 
   constructor(
     private userService: UserService,
@@ -69,12 +69,20 @@ export class SignupComponent implements OnInit {
           timeOut: 4000
         });
         this.router.navigate(["/examples/login"]);
-      } else {
+      } 
+      //  else if (user.type === "company") {
+        
+      // }
+      else {
         this.toastr.error("Error -", this.FirstName);
       }
     });
   }
+// onClick() {
+// if(this.type === "company") {
 
+// }
+// }
   // resetForm(form?: NgForm) {
   //   if (form != null) form.reset();
   //   this.user = {

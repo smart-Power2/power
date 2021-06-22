@@ -17,14 +17,18 @@ export class LoginComponent implements OnInit {
   isLoginError: boolean = false;
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$";
   user: User = new User();
-  email : string ;
-  password : string;
+  email: string;
+  password: string;
   constructor(
     private userService: UserService,
     private router: Router,
     private toastr: ToastrService
   ) {}
 
+  btClick = function () {
+    this.router.navigateByUrl("/signup");
+  };
+  
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("login-page");
@@ -40,7 +44,6 @@ export class LoginComponent implements OnInit {
     navbar.classList.remove("navbar-transparent");
   }
   OnSubmitLogin() {
-    
     this.userService.userAuthentification(this.email, this.password).subscribe(
       (data) => {
         if (data) {
