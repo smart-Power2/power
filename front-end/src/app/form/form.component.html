@@ -1,16 +1,85 @@
-<div class="x">
-    <form class="form-car" [formGroup]="carForm" (ngSubmit)="registerCar()">
-        <input type="text" class="form-control" formControlName="brand" placeholder="name">
-        <input type="text" class="form-control" formControlName="model" placeholder="model">
-        <input type="text" class="form-control" formControlName="engine" placeholder="engine">
-        <input type="number" class="form-control" formControlName="price" placeholder="price">
-        <input type="number" class="form-control" formControlName="seats" placeholder="seats">
-        <input type="number" class="form-control" formControlName="doors" placeholder="doors">
-        <input type="number" class="form-control" formControlName="suitcases" placeholder="suitcases">
-        <input type="text" class="form-control" formControlName="airconditioner" placeholder="airconditioner">
-        <input type="text" class="form-control" formControlName="transmission" placeholder="transmission" >
-        <input type="file" class="form-control" name="file" placeholder="file" (change)="onFileSelected($event)">
-        <button type="submit" class="btn btn-block btn-primary">Submit</button>
-    </form>
-
+<div class="card">
+  <form class="form-car" [formGroup]="carForm" (ngSubmit)="registerCar()">
+    <div class="title"><h1>Create Car Form</h1></div>
+    <label for="brand">brand</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="brand"
+      name="brand"
+    />
+    <label for="model">model</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="model"
+      name="model"
+    />
+    <label for="engine">engine</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="engine"
+      name="engine"
+    />
+    <label for="price">price</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="price"
+      name="price"
+    />
+    <label for="seats">seats</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="seats"
+      name="seats"
+    />
+    <label for="doors">doors</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="doors"
+      name="doors"
+    />
+    <label for="suitcases">suitcases</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="suitcases"
+      name="suitcases"
+    />
+    <label for="airconditioner">airconditioner</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="airconditioner"
+      name="airconditioner"
+    />
+    <label for="transmission">transmission</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="transmission"
+      name="transmission"
+    />
+    <label for="image">image</label>
+    <span class="image-upload">
+      <label for="file-input">
+        <i  class="fa fa-upload" aria-hidden="true"></i>
+      </label>
+    
+      <input
+      id="file-input"
+      type="file"
+      name="file"
+      (change)="onFileSelected($event)"
+      
+    />
+    </span>
+    <button type="submit" id="button" class="btn btn-block btn-primary">
+      Submit
+    </button>
+  </form>
 </div>

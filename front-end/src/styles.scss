@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+
+

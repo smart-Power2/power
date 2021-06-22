@@ -44,7 +44,6 @@ export class FormComponent implements OnInit {
     formData.append('airconditioner', this.carForm.value.airconditioner);
     formData.append('transmission', this.carForm.value.transmission);
     formData.append('file', this.carForm.get('file').value);
-
     this.postService.addCar(formData).subscribe((res) => {
       console.log(res);
     });

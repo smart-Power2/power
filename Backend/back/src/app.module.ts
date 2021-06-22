@@ -5,9 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { CarModule } from './car/car.module';
-import { Car } from './car/car.entity';
 import { CloudinaryModule } from './cloudinary/cloudinary.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -21,7 +19,7 @@ import { CloudinaryModule } from './cloudinary/cloudinary.module';
     CloudinaryModule,
     CarModule,
     UserModule,
-    AuthModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
