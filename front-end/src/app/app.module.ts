@@ -16,8 +16,9 @@ import { AuthGuard } from "./auth.guard";
  import {ToastrModule} from "ngx-toastr";
 import { JwtModule } from "@auth0/angular-jwt";
 import { ValidateService } from './services/validate.service';
+import { SearchComponent } from './search/search.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,

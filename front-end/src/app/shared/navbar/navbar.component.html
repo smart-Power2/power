@@ -60,7 +60,7 @@
             <p>Contact A Live Superior</p>
           </a>
         </li> -->
-        <li class="nav-item" *ngIf="!loggedIn">
+        <li class="nav-item" *ngIf="!userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
             type="button"

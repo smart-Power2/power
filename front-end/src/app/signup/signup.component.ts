@@ -74,9 +74,6 @@ export class SignupComponent implements OnInit {
         });
         this.router.navigate(["/examples/login"]);
       }
-      //  else if (user.type === "company") {
-
-      // }
       else {
         this.toastr.error("Error -", this.FirstName);
       }
