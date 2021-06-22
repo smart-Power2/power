@@ -23,10 +23,10 @@ export class UserController {
   //   return this.userService.create(createUserDto);
   // }
 
-  // @Post("/auth/signup")
-  // signup(@Body() createUserDto: CreateUserDto) {
-  //  return this.userService.signup(createUserDto);
-  // }
+  @Post('/auth/signup')
+  signup(@Body() createUserDto: CreateUserDto) {
+    return this.userService.signup(createUserDto);
+  }
 
   // @UseGuards(AuthGuard('local'))
   // @Post('auth/login')
@@ -34,10 +34,10 @@ export class UserController {
   //   return req.user;
   // }
 
-  // @Get()
-  // findAll() {
-  //   return this.userService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.userService.findAll();
+  }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {

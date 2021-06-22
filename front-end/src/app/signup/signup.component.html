@@ -1,94 +1,98 @@
-<!-- <p>signup works!</p> -->
-<mdb-card>
 
-  <mdb-card-header class="info-color white-text text-center py-4">
-    <h5>
-      <strong>Sign up</strong>
-    </h5>
-  </mdb-card-header>
-
-  <!--Card content-->
-  <mdb-card-body class="px-lg-5 pt-0">
-
-    <!-- Form -->
-    <form class="text-center" style="color: #757575;">
-
-      <div class="form-row">
-        <div class="col">
-          <!-- First name -->
-          <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
-            <label for="materialRegisterFormFirstName">First name</label>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form action="#" (ngSubmit)="OnSubmit()">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input
+                type="text"
+                placeholder="Enter your first name"
+                name="FirstName"
+                [(ngModel)]="FirstName"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                name="LastName"
+                [(ngModel)]="LastName"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                name="email"
+                [(ngModel)]="email"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                type="text"
+                placeholder="Enter your number"
+                name="phoneNumber"
+                [(ngModel)]="phoneNumber"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                [(ngModel)]="password"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                name="confirmPassword"
+                [(ngModel)]="confirmPassword"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="col">
-          <!-- Last name -->
-          <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
-            <label for="materialRegisterFormLastName">Last name</label>
+          <div class="gender-details">
+            <input type="radio" name="type" id="dot-1" [(ngModel)]="type" value="company"/>
+            <input type="radio" name="type" id="dot-2" [(ngModel)]="type" value="customer"/>
+            <span class="gender-title">What type of user Are you?</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Company</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Customer</span>
+              </label>
+            </div>
           </div>
-        </div>
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
       </div>
-
-      <!-- E-mail -->
-      <div class="md-form mt-0">
-        <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
-        <label for="materialRegisterFormEmail">E-mail</label>
-      </div>
-
-      <!-- Password -->
-      <div class="md-form">
-        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
-          mdbInput>
-        <label for="materialRegisterFormPassword">Password</label>
-        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 8 characters and 1 digit
-        </small>
-      </div>
-
-      <!-- Phone number -->
-      <div class="md-form">
-        <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
-          mdbInput>
-        <label for="materialRegisterFormPhone">Phone number</label>
-        <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-          Optional - for two-step authentication
-        </small>
-      </div>
-
-      <!-- Newsletter -->
-      <mdb-checkbox>Subscribe to our newsletter</mdb-checkbox>
-
-      <!-- Sign up button -->
-      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
-        type="submit">Sign in</button>
-
-      <!-- Social register -->
-      <p>or sign up with:</p>
-
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="facebook"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="twitter"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="linkedin"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="heart"></mdb-icon>
-      </a>
-
-      <hr>
-
-      <!-- Terms of service -->
-      <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>. </p>
-
-    </form>
-    <!-- Form -->
-
-  </mdb-card-body>
-
-</mdb-card>
+    </div>
+  </body>
+</html>
