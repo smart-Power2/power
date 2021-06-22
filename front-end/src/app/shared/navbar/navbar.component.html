@@ -60,7 +60,7 @@
             <p>Contact A Live Superior</p>
           </a>
         </li> -->
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!loggedIn">
           <button
             class="btn btn-primary btn-round"
             type="button"
@@ -77,7 +77,7 @@
             <p type="button" (click)="btnClick();">Sign Up</p>
           </a>
         </li> -->
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!loggedIn">
           <button
             class="btn btn-primary btn-round"
             type="button"
@@ -86,7 +86,7 @@
             <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
           </button>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="loggedIn">
           <button
             class="btn btn-primary btn-round"
             type="button"

@@ -59,11 +59,12 @@ export class UserService {
     return this.http.get(this.rootUrl + "/profile", { headers: headers });
   }
 
-  storeUserData(token: string, user: any) {
+  storeUserData(token: string) {
     localStorage.setItem("id_token", token);
-    localStorage.setItem("user", JSON.stringify(user));
+    // localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
-    this.user = user;
+    return this.authToken;
+    // this.user = user;
   }
 
   Logout() {

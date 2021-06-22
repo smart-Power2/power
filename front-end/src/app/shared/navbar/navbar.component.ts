@@ -16,7 +16,7 @@ import { ToastrService } from "ngx-toastr";
 export class NavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
-
+  public loggedIn: boolean = false;
   constructor(
     private userService: UserService,
     public location: Location,
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService
   ) {
-    this.sidebarVisible = false;
+    
   }
 
   btnClick = function () {
@@ -36,6 +36,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName("navbar-toggler")[0];
+      this.sidebarVisible = false;
+      if(this.userService.loggedIn()) this.loggedIn = true;
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;

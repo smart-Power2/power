@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
   email: string;
   phoneNumber: number;
   password: string;
+  confirmPassword: string;
   type: string;
 
   constructor(
@@ -28,7 +29,8 @@ export class SignupComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
   // OnSubmitLogin(email: any, password: any) {
   //   this.userService.userAuthentification(email, password).subscribe(
   //     (data: any) => {
@@ -53,7 +55,9 @@ export class SignupComponent implements OnInit {
 
   OnSubmit() {
     // console.log(form);
-    const user = {
+    if(this.password != this.confirmPassword) alert('Make sure the passords match')
+    else {
+      const user = {
       FirstName: this.FirstName,
       LastName: this.LastName,
       email: this.email,
@@ -69,20 +73,23 @@ export class SignupComponent implements OnInit {
           timeOut: 4000
         });
         this.router.navigate(["/examples/login"]);
-      } 
+      }
       //  else if (user.type === "company") {
-        
+
       // }
       else {
         this.toastr.error("Error -", this.FirstName);
       }
     });
+    }
+    
+    
   }
-// onClick() {
-// if(this.type === "company") {
+  // onClick() {
+  // if(this.type === "company") {
 
-// }
-// }
+  // }
+  // }
   // resetForm(form?: NgForm) {
   //   if (form != null) form.reset();
   //   this.user = {

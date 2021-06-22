@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { User } from "../../models/user.model";
-// import { NgForm } from "@angular/forms";
+import { NgForm } from "@angular/forms";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   btClick = function () {
     this.router.navigateByUrl("/signup");
   };
-  
+
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("login-page");
@@ -47,11 +47,23 @@ export class LoginComponent implements OnInit {
     this.userService.userAuthentification(this.email, this.password).subscribe(
       (data) => {
         if (data) {
-          // this.userService.storeUserData(data, data.user);
+          console.log("hello", data);
+          this.userService.storeUserData(data["access_token"]);
+          // console.log(
+          //   "khalil",
+          //   this.userService.storeUserData(
+          //     data["access_token"],
+          //     data["username"]
+          //   )
+          // );
           this.toastr.success("Awesome!", "You are logged in!", {
             timeOut: 4000
           });
           this.router.navigate(["/"]);
+          // console.log(
+          //   "hello",
+          //   this.userService.storeUserData(data["access_token"])
+          // );
         } else {
           this.isLoginError = true;
           this.toastr.error("Oops!", this.email, {

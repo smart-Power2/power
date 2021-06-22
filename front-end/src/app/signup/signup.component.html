@@ -55,7 +55,7 @@
             <div class="input-box">
               <span class="details">Password</span>
               <input
-                type="text"
+                type="password"
                 placeholder="Enter your password"
                 name="password"
                 [(ngModel)]="password"
@@ -65,31 +65,26 @@
             <div class="input-box">
               <span class="details">Confirm Password</span>
               <input
-                type="text"
+                type="password"
                 placeholder="Confirm your password"
-                name="password"
-                [(ngModel)]="password"
+                name="confirmPassword"
+                [(ngModel)]="confirmPassword"
                 required
               />
             </div>
           </div>
           <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1" />
-            <input type="radio" name="gender" id="dot-2" />
-            <input type="radio" name="gender" id="dot-3" />
-            <span class="gender-title">Are you a company ?</span>
+            <input type="radio" name="type" id="dot-1" [(ngModel)]="type" value="company"/>
+            <input type="radio" name="type" id="dot-2" [(ngModel)]="type" value="customer"/>
+            <span class="gender-title">What type of user Are you?</span>
             <div class="category">
               <label for="dot-1">
                 <span class="dot one"></span>
-                <span class="gender">Yes</span>
+                <span class="gender">Company</span>
               </label>
               <label for="dot-2">
                 <span class="dot two"></span>
-                <span class="gender">No</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
+                <span class="gender">Customer</span>
               </label>
             </div>
           </div>

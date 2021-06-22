@@ -86,7 +86,7 @@ export class UserService {
       email: createUserDto.email,
       password: hash,
       phoneNumber: createUserDto.phoneNumber,
-      type: createUserDto.type
+      type: createUserDto.type,
     });
     return JSON.stringify({ msg: 'right' });
   }
