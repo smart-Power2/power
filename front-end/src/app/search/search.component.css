@@ -37,13 +37,13 @@ input[type="text"] {
 }
 
 input[type="text"]:focus:hover {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid black;
 }
 
 input[type="text"]:focus {
   width: 700px;
   z-index: 1;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid black;
   cursor: text;
 }
 input[type="submit"] {
