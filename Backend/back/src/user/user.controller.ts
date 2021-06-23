@@ -23,16 +23,21 @@ export class UserController {
   //   return this.userService.create(createUserDto);
   // }
 
+  @Post('/auth/signup')
+  signup(@Body() createUserDto: CreateUserDto) {
+    return this.userService.signup(createUserDto);
+  }
+
   // @UseGuards(AuthGuard('local'))
   // @Post('auth/login')
   // async login(@Request() req) {
   //   return req.user;
   // }
 
-  // @Get()
-  // findAll() {
-  //   return this.userService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.userService.findAll();
+  }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {

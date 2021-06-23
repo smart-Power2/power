@@ -4,6 +4,8 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
+
+import * as bcrypt from 'bcrypt';
 // export type User = any;
 @Injectable()
 export class UserService {
@@ -39,23 +41,54 @@ export class UserService {
   //   },
   // ];
 
-  async findOne(firstName: string): Promise<User | undefined> {
-    // return this.users.find((user) => user.FirstName === firstName);
-    return this.userRepository.findOne({ FirstName: firstName });
-  }
-  async findUser(Email: string): Promise<User | undefined> {
-    return this.userRepository.findOne(2);
+  async findOne(email: string): Promise<User | undefined> {
+    console.log(email);
+    return this.userRepository.findOne({ email: email });
   }
 
   async create(createUserDto: CreateUserDto) {
     const user = new User();
     user.FirstName = createUserDto.FirstName;
     user.LastName = createUserDto.LastName;
-    user.Email = createUserDto.Email;
+    user.email = createUserDto.email;
     user.phoneNumber = createUserDto.phoneNumber;
     user.password = createUserDto.password;
+    user.type = createUserDto.type;
     await this.userRepository.save(user);
     return user;
+  }
+
+  async signup(createUserDto: CreateUserDto) {
+    const user = new User();
+    const saltOrRounds = 10;
+    const hash = await bcrypt.hash(createUserDto.password, saltOrRounds);
+    const email = createUserDto.email;
+    const findlogin = await this.userRepository.findOne({ email: email });
+
+    if (findlogin) {
+      return JSON.stringify({ msg: 'This email exists' });
+    }
+
+    // const createdUser = async create(createUserDto: CreateUserDto) {
+    //     const user = new User();
+    //     user.FirstName = createUserDto.FirstName;
+    //     user.LastName = createUserDto.LastName;
+    //     user.email = createUserDto.email;
+    //     user.phoneNumber = createUserDto.phoneNumber;
+    //     user.password = createUserDto.password;
+    //     await this.usersRepository.save(user);
+    //     return user;
+    //   }
+
+    const createdUser = this.create({
+      FirstName: createUserDto.FirstName,
+      LastName: createUserDto.LastName,
+      email: createUserDto.email,
+      password: hash,
+      phoneNumber: createUserDto.phoneNumber,
+      type: createUserDto.type,
+    });
+    return JSON.stringify({ msg: 'right' });
   }
 
   findAll(): Promise<User[]> {

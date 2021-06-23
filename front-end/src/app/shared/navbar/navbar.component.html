@@ -54,18 +54,46 @@
             <p>Feedbacks</p>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="" target="_blank">
             <i class="now-ui-icons clothes_tie-bow"></i>
             <p>Contact A Live Superior</p>
           </a>
+        </li> -->
+        <li class="nav-item" *ngIf="!userService.loggedIn()">
+          <button
+            class="btn btn-primary btn-round"
+            type="button"
+            (click)="bClick()"
+          >
+            Login
+          </button>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link btn btn-neutral" target="_blank">
-            <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
+            <i class="now-ui-icons arrows-1_share-66"></i>
             <i class="now-ui-icons objects_key-25"></i>
-            <p>Sign Up</p>
+            <a [RouterLink]="['/signup']"  value="Sign Up" ></a>
+            <p type="button" (click)="btnClick();">Sign Up</p>
           </a>
+        </li> -->
+        <li class="nav-item" *ngIf="!loggedIn">
+          <button
+            class="btn btn-primary btn-round"
+            type="button"
+            (click)="btnClick()"
+          >
+            <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
+          </button>
+        </li>
+        <li class="nav-item" *ngIf="userService.loggedIn()">
+          <button
+            class="btn btn-primary btn-round"
+            type="button"
+            (click)="Logout()"
+          >
+            <i class="now-ui-icons ui-2_favourite-28"></i> Log Out
+          </button>
         </li>
         <li class="nav-item">
           <a routerLink='/form' class="nav-link btn btn-neutral" >

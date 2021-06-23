@@ -12,7 +12,7 @@ export class User {
   LastName: String;
 
   @Column()
-  Email: String;
+  email: String;
 
   @Column()
   phoneNumber: Number;
