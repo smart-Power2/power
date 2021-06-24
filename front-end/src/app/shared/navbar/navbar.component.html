@@ -86,7 +86,7 @@
             <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
           </button>
         </li>
-        <li class="nav-item" *ngIf="loggedIn">
+        <li class="nav-item" *ngIf="userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
             type="button"
@@ -94,6 +94,14 @@
           >
             <i class="now-ui-icons ui-2_favourite-28"></i> Log Out
           </button>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/form' class="nav-link btn btn-neutral" >
+            <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
+
+            <i class="now-ui-icons objects_key-25"></i>
+            <p>Company</p>
+          </a>
         </li>
         <li class="nav-item">
           <a
