@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "", redirectTo: "index", pathMatch: "full" },
   { path: "index", component: ComponentsComponent },
   { path: 'allcars',    component: ListCarComponent },
-  { path: ':id',                   component: CarDetailComponent },
+  { path: 'car/:id',      component: CarDetailComponent },
   { path: 'reservation/:id',       component: ReservationComponent },
 
   { path: "search", component: SearchComponent },

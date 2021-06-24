@@ -10,11 +10,11 @@ export class User {
   @Column()
   FirstName: String;
 
-  @OneToMany(()=>Car, car =>car.users)
-  cars : Car [];
+    @OneToMany(()=>Car, car =>car.users)
+    cars : Car [];
 
-  // @ManyToOne(()=>Reservation , reservation=>reservation.id)
-  // reservation:Reservation[]
+    @ManyToOne(()=>Reservation , reservation=>reservation.id)
+   reservation:Reservation[]
 
   @Column()
   LastName: String;

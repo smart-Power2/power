@@ -22,7 +22,7 @@ export class ListCarComponent implements OnInit {
     this.CarService.getCars()
     .subscribe((cars: Car[])=>{
       this.cars=cars
-      console.log(this.cars)
+      // console.log(this.cars)
     })
   }
 

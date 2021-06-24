@@ -24,7 +24,7 @@
     </div>
     <div class="navbar-translate">
       <!-- ngbTooltip="Designed by Invision. Coded by Creative Tim" -->
-      <a class="navbar-brand" [routerLink]="['/index']" placement="bottom">
+      <a class="navbar-brand" routerLink="/index" placement="bottom">
         Billio Rich
       </a>
       <button
@@ -83,7 +83,7 @@
             type="button"
             (click)="btnClick()"
           >
-            <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
+            <i class="now-ui-icons ui-2_favourite-28"></i>Sign Up
           </button>
         </li>
         <li class="nav-item" *ngIf="userService.loggedIn()">
