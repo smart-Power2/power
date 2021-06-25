@@ -9,6 +9,7 @@ export class ReservationController {
 
   @Post()
   create(@Body() createReservationDto: CreateReservationDto) {
+    console.log(createReservationDto)
     return this.reservationService.create(createReservationDto);
   }
 

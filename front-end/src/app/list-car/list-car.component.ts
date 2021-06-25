@@ -9,6 +9,7 @@ import { CarService } from '../car.service';
   styleUrls: ['./list-car.component.css']
 })
 export class ListCarComponent implements OnInit {
+  currentRate = 8;
 
  cars:Car[]=[];
  name:string; 
@@ -16,6 +17,7 @@ export class ListCarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCars()
+    
   }
    
   getCars(){
@@ -25,6 +27,8 @@ export class ListCarComponent implements OnInit {
       // console.log(this.cars)
     })
   }
+
+  
 
 //   search (){
 //     if(this.name!==""){

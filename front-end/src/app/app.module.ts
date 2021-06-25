@@ -20,8 +20,9 @@ import { SearchComponent } from './search/search.component';
 import { ListCarComponent } from './list-car/list-car.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { RatingComponent } from './rating/rating.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,

@@ -1,5 +1,7 @@
 export interface Reservation {
-    id: number;
-    takItAt:Date;
+    car: number;
+    user: number;
+    takeItAt:Date;
     returnItAt:Date;
+
 }

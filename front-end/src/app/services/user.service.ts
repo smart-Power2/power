@@ -59,8 +59,9 @@ export class UserService {
     return this.http.get(this.rootUrl + "/profile", { headers: headers });
   }
 
-  storeUserData(token: string) {
+  storeUserData(token: string , user_id:string) {
     localStorage.setItem("id_token", token);
+    localStorage.setItem("user_id",user_id)
     // localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     return this.authToken;
@@ -76,6 +77,7 @@ export class UserService {
   loadToken() {
     const token = localStorage.getItem("id_token");
     this.authToken = token;
+    return this.authToken
   }
 
   loggedIn() {
