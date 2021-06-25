@@ -93,7 +93,7 @@ font-family: 'EB Garamond', serif;
 
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #809fff;
+	background:  rgb(86, 38, 134);
 	border-radius: 5px;
   position: relative;
   overflow: hidden;

@@ -11,7 +11,8 @@ import { Car } from "app/car";
 })
 export class ProfileComponent implements OnInit {
   user: User = null;
-  cars: Car[] = [];
+  carsOutSide: Car[] = [];
+  carsInSide: Car[] = [];
   zoom: number = 14;
   lat: number = 44.445248;
   lng: number = 26.099672;
@@ -61,10 +62,13 @@ export class ProfileComponent implements OnInit {
         if (ele[i].user.id === id) {
           console.log('a77777777777',ele[i]);
           
-          this.cars.push(ele[i].car.file1);
+          this.carsOutSide.push(ele[i].car.file1);
+          this.carsInSide.push(ele[i].car.file2);
         }
       }
 
     });
   }
+
+
 }

@@ -28,6 +28,9 @@ export class ReservationComponent implements OnInit {
       this.ReservationService.getCar(id)
       .subscribe(car => this.car = car);
     }
+    editPrice(){
+      
+    }
   addReservation() {
     var {year, month, day} = this.takeItAt
     this.takeItAt = new Date(year, month, day)
