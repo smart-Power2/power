@@ -51,12 +51,13 @@ export class UserService {
   }
 
   getProfile() {
+    const id = Number(localStorage.getItem('user_id'))
     this.loadToken();
     let headers = new HttpHeaders({
       Authorization: this.authToken,
       "Content-Type": "application/json"
     });
-    return this.http.get(this.rootUrl + "/profile", { headers: headers });
+    return this.http.get(this.rootUrl + `/user/${id}`, { headers: headers });
   }
 
   storeUserData(token: string , user_id:string) {

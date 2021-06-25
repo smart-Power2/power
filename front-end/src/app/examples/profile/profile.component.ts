@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax from 'rellax';
-
+import { ProfileService } from 'app/profile.service';
+import { User } from '../../user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  user: User = null 
   zoom: number = 14;
   lat: number = 44.445248;
   lng: number = 26.099672;
@@ -14,12 +16,13 @@ export class ProfileComponent implements OnInit {
     data : Date = new Date();
     focus;
     focus1;
+    route: any;
 
-    constructor() { }
+    constructor(private userService : ProfileService ) { }
 
     ngOnInit() {
+      this.getUser()
       var rellaxHeader = new Rellax('.rellax-header');
-
         var body = document.getElementsByTagName('body')[0];
         body.classList.add('profile-page');
         var navbar = document.getElementsByTagName('nav')[0];
@@ -32,4 +35,15 @@ export class ProfileComponent implements OnInit {
         navbar.classList.remove('navbar-transparent');
     }
 
+     getUser():void{
+      const id =Number(localStorage.getItem('user_id'))
+      console.log(id)
+       this.userService.getUser(id)
+       .subscribe(user=>{
+         console.log(user)
+        this.user = user})
+      //  console.log('userrrr',this.userService.getUser(id))
+     }
+
+     
 }

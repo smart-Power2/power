@@ -1,14 +1,17 @@
-<div class="wrapper">
+<div *ngIf='user' class="wrapper">
     <div class="page-header page-header-small" filter-color="orange">
         <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
         </div>
         <div class="container">
             <div class="content-center">
-                <div class="photo-container">
-                    <img src="assets/img/ryan.jpg" alt="">
+                <div *ngIf='!user.image' class="photo-container">
+                    <img src="http://www.access2school.com/img/profile_pic.jpg" alt="">
                 </div>
-                <h3 class="title">Ryan Scheinder</h3>
-                <p class="category">Photographer</p>
+                <div *ngIf='!!user.image' class="photo-container">
+                    <img src={{user.image}} alt="">
+                </div>
+                <h3 class="title">{{user.FirstName}} {{user.LastName}}</h3>
+                <!-- <p class="category">Photographer</p> -->
                 <div class="content">
                     <div class="social-description">
                         <h2>26</h2>
