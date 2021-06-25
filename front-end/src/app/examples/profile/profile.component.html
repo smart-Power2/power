@@ -42,9 +42,9 @@
           </div>
           <h3 class="title">About me</h3>
           <h5 class="description">An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</h5>
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="title text-center">My Portfolio</h4>
+            <div  class="row">
+                <div  class="col-md-12">
+                    <h4 class="title text-center">all reserved Car</h4>
                       <ngb-tabset [justify]="'center'" type="pills" class="nav nav-pills nav-pills-primary  nav-pills-just-icons justify-content-center tab-space">
                           <ngb-tab>
                             <ng-template ngbTabTitle>
@@ -54,14 +54,14 @@
                                 <div class="row">
                                   <div class="col-md-10 ml-auto mr-auto">
                                       <div class="row collections">
-                                          <div class="col-md-6">
-                                              <img src="assets/img/bg1.jpg" alt="" class="img-raised">
-                                              <img src="assets/img/bg3.jpg" alt="" class="img-raised">
+                                          <div *ngFor='let car of cars'  class="col-md-6">
+                                              <img src={{car}} alt="" class="img-raised"> 
+                                              <!-- <img src={{car[1]}} alt="" class="img-raised"> -->
                                           </div>
-                                          <div class="col-md-6">
+                                          <!-- <div class="col-md-6">
                                               <img src="assets/img/bg8.jpg" alt="" class="img-raised">
                                               <img src="assets/img/bg7.jpg" alt="" class="img-raised">
-                                          </div>
+                                          </div> -->
                                       </div>
                                   </div>
                                 </div>

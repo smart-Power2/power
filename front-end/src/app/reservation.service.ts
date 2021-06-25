@@ -21,7 +21,10 @@ export class ReservationService {
   addReservation(reservation:Reservation):Observable<Reservation>{
     return this.http.post<Reservation>(this.reservationUrl, JSON.stringify(reservation), this.httpOptions)
   }
-
+ 
+  getReservation() :Observable<Reservation[]>{
+    return this.http.get<Reservation[]>(this.reservationUrl)
+  }
 
   getCar(id: number): Observable<Car> {
     const url = `${this.carUrl}/${id}`;

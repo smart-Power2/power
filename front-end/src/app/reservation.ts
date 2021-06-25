@@ -1,6 +1,7 @@
+import { User } from "./models/user.model";
 export interface Reservation {
-    car: number;
-    user: number;
+    car: any;
+    user: any;
     takeItAt:Date;
     returnItAt:Date;
 
