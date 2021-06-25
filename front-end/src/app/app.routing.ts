@@ -11,11 +11,12 @@ import { NucleoiconsComponent } from "./components/nucleoicons/nucleoicons.compo
 import { SignupComponent } from "./signup/signup.component";
 import { SearchComponent } from "./search/search.component";
 import {FormComponent} from './form/form.component';
-
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "index", pathMatch: "full" },
   { path: 'form', component: FormComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: "index", component: ComponentsComponent },
   { path: "search", component: SearchComponent },
   { path: "signup", component: SignupComponent },

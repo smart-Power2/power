@@ -19,9 +19,10 @@ import { ValidateService } from './services/validate.service';
 import { SearchComponent } from './search/search.component';
 import {PostService} from './post.service';
 import { FormComponent } from './form/form.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent, PaymentComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
