@@ -11,7 +11,6 @@ export class Car {
   users: User[
     
   ];
-  
 
   @Column()
   brand: string;
