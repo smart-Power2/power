@@ -68,14 +68,15 @@ export class ProfileComponent implements OnInit {
     });
   }
   deleteReservation(str){
-    console.log('here')
     this.reservationService.getReservation().subscribe((ele) => {
+      console.log('here',ele)
       for (var i = 0; i < ele.length; i++) {
         console.log(ele[i].car.file1 === str)
        if (ele[i].car.file1===str){
         this.reservationService.removeReservation(ele[i].id).subscribe(car => {
-          console.log(car)
-        })
+          this.carsOutSide= this.carsOutSide.filter(e=>e!==str)
+          this.carsInSide= this.carsInSide.filter(e=>e!==ele[i].car.file2)
+          })
         return ;
        }
       }

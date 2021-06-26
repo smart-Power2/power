@@ -43,8 +43,8 @@ export class Car {
   file1: string;
 
   @Column()
-  file2: string;
+  file2?: string;
 
   @Column()
-  file3: string;
+  file3?: string;
 }

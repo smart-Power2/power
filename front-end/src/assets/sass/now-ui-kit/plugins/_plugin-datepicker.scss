@@ -409,7 +409,8 @@ input.datetimepicker[data-color] + .bootstrap-datetimepicker-widget{
 
 input.datetimepicker[data-color="orange"] + ngb-datepicker{
 
-    background-color: $primary-color;
+    background-color: rgb(123, 56, 185);
+    top: 1% !important;
     .ngb-dp-months .ngb-dp-day .btn-light,
     .ngb-dp-header ngb-datepicker-navigation .ngb-dp-navigation-chevron,
     .ngb-dp-header ngb-datepicker-navigation ngb-datepicker-navigation-select .custom-select,
@@ -541,10 +542,10 @@ ngb-datepicker{
           position: absolute;
           width: 0;
           height: 0;
-          vertical-align: middle;
+          vertical-align:baseline;
           content: "";
-          top: -7px;
-          left: 10px;
+          top: -10px;
+          left: 100px;
           right: auto;
           border-bottom: .4rem solid;
           border-right: .41rem solid transparent;
