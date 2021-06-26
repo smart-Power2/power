@@ -50,3 +50,4 @@ export class PaymentComponent implements OnInit {
   }
 }    
    
+//connect
