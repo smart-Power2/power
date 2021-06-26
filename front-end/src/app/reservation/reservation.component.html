@@ -1,56 +1,112 @@
-<div id='t' class="col-md-6">
-    <h4>Datetimepicker</h4>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="datepicker-container">
-          <div class="form-group">
-            <input
-              class="form-control datetimepicker"
-              placeholder="06/07/2017"
-              name="dp"
-              ngbDatepicker
-              #d="ngbDatepicker"
-              (click)="d.toggle()"
-              data-color="orange"
-            />
+<div class="reserve">
+  <div id='t' class="col-md-6">
+  
+      <h4>Datetimepicker</h4>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="datepicker-container">
+            <div class="form-group">
+              <label>take it at</label>
+  
+              <input
+                class="form-control datetimepicker"
+                placeholder="06/07/2017"
+                name="takeItAt"
+                ngbDatepicker
+                #d="ngbDatepicker"
+                (click)="d.toggle()"
+                [(ngModel)]="takeItAt"
+                data-color="orange"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <!--                 end collapse -->
     </div>
-    <!--                 end collapse -->
-  </div>
-  <div  class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="datepicker-container">
-          <div class="form-group">
-            <input
-              class="form-control datetimepicker"
-              placeholder="06/07/2017"
-              name="dp"
-              ngbDatepicker
-              #d="ngbDatepicker"
-              (click)="d.toggle()"
-              data-color="orange"
-            />
+    <div  class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="datepicker-container">
+            <div class="form-group">
+              <label>return it at</label>
+  
+              <input
+                class="form-control datetimepicker"
+                placeholder="06/07/2017"
+                name="returnItAt"
+                ngbDatepicker
+                #b="ngbDatepicker"
+                (click)="b.toggle()"
+                data-color="orange"
+                [(ngModel)]="returnItAt"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <!--                 end collapse -->
     </div>
-    <!--                 end collapse -->
-  </div>
-  <div id = 'ti'class="sx-fleetlist-row-bottom wrap">
-    <div class="sx-fleetlist-button">
-      <button
-      routerLink="/reservation/{{car.id}}"
-        id="button"
-        type="button"
-        class="btn btn-default btn-tooltip"
-        placement="left"
-      >
-        Reserve 
-      </button>
-     
+    <div id = 'ti'class="sx-fleetlist-row-bottom wrap">
+      <div class="sx-fleetlist-button">
+        <button
+          id="button"
+          type="button"
+          class="btn btn-default btn-tooltip"
+          (click)='addReservation()'
+          style="background-color: blueviolet;"
+        >
+          Reserve 
+        </button>
+       
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
   </div>
+<div *ngIf='car ' class="section" id="carousel">
+  <div class="container">
+    <div class="title">
+      <h2>{{car.price}} dt</h2>
+
+      <h4>{{car.brand}}</h4>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <img
+              class="d-block"
+              src={{car.file1}}
+              alt="First slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>inside</h5>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img
+              class="d-block"
+              src={{car.file2}}
+              alt="Second slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>left side</h5>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img
+              class="d-block"
+              src={{car.file3}}
+              alt="Third slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>right side</h5>
+            </div>
+          </ng-template>
+        </ngb-carousel> 
+      </div>
+    </div>
+  </div>
+</div>
+

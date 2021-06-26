@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn , OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn , OneToMany  ,  JoinColumn, ManyToOne} from 'typeorm';
 import{User} from '../../user/user.entity'
 import {Car} from '../../car/entities/car.entity'
 
@@ -7,16 +7,17 @@ export class Reservation {
     @PrimaryGeneratedColumn()
     id:number ;
 
-    @OneToMany(() => User, user => user.id) 
-    users: User[]; 
-
-    @OneToMany(() => Car, car => car.id) 
-    cars: Car[]; 
-
     @Column()
     takeItAt:Date;
 
     @Column()
     returnItAt:Date;
+
+    @ManyToOne(() => User, user => user.id)
+    user: User;
+
+    @ManyToOne(() => Car, car => car.id)
+    car: Car;
+   
 
 }

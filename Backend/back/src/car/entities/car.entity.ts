@@ -1,6 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn , ManyToOne } from 'typeorm';
 import{User} from '../../user/user.entity'
-import {Reservation} from '../../reservation/entities/reservation.entity'
 
 
 @Entity()
@@ -9,10 +8,9 @@ export class Car {
   id: number;
 
   @ManyToOne(() => User, user => user.FirstName) 
-  users: User[];
-  
-//   @ManyToOne(()=>Reservation,reservation=>reservation.id)
-//   reservation:Reservation
+  users: User[
+    
+  ];
 
   @Column()
   brand: string;
@@ -45,8 +43,8 @@ export class Car {
   file1: string;
 
   @Column()
-  file2: string;
+  file2?: string;
 
   @Column()
-  file3: string;
+  file3?: string;
 }

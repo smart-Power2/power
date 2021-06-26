@@ -45,6 +45,9 @@ export class UserService {
     console.log(email);
     return this.usersRepository.findOne({ email: email });
   }
+  findOne1(id: number): Promise<User> {
+    return this.usersRepository.findOne(id);
+  }
 
   async create(createUserDto: CreateUserDto) {
     const user = new User();
