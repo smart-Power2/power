@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCars();
+    this.getCarsFromReservation();
     this.getUser();
     var rellaxHeader = new Rellax(".rellax-header");
     var body = document.getElementsByTagName("body")[0];
@@ -53,14 +53,12 @@ export class ProfileComponent implements OnInit {
     //  console.log('userrrr',this.userService.getUser(id))
   }
 
-  getCars() {
+  getCarsFromReservation() {
     var id = Number(localStorage.getItem("user_id"));
     this.reservationService.getReservation().subscribe((ele) => {
       console.log(ele)
-      console.log('saluuuuuuuuuut',ele[0].user);
       for (var i = 0; i < ele.length; i++) {
         if (ele[i].user.id === id) {
-          console.log('a77777777777',ele[i]);
           
           this.carsOutSide.push(ele[i].car.file1);
           this.carsInSide.push(ele[i].car.file2);
@@ -69,6 +67,23 @@ export class ProfileComponent implements OnInit {
 
     });
   }
+  deleteReservation(str){
+    console.log('here')
+    this.reservationService.getReservation().subscribe((ele) => {
+      for (var i = 0; i < ele.length; i++) {
+        console.log(ele[i].car.file1 === str)
+       if (ele[i].car.file1===str){
+        this.reservationService.removeReservation(ele[i].id).subscribe(car => {
+          console.log(car)
+        })
+        return ;
+       }
+      }
+    })
+  }
 
+  test(arg) {
+    console.log(arg)
+  }
 
 }

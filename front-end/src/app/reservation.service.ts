@@ -29,4 +29,9 @@ export class ReservationService {
   getCar(id: number): Observable<Car> {
     const url = `${this.carUrl}/${id}`;
     return this.http.get<Car>(url)
-  }}
+  }
+  removeReservation(id:number):Observable<Reservation>{
+    const url = `${this.reservationUrl}/${id}`;
+    return this.http.delete<Reservation>(url)
+  }
+}

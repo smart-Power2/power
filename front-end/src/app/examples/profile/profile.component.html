@@ -45,17 +45,25 @@
             <div  class="row">
                 <div  class="col-md-12">
                     <h4 class="title text-center">all reserved Car</h4>
-                      <ngb-tabset [justify]="'center'" type="pills" class="nav nav-pills nav-pills-primary  nav-pills-just-icons justify-content-center tab-space">
+                      <ngb-tabset [justify]="'center'" type="pills" class="nav nav-pills nav-pills-primary  nav-pills-just-icons justify-content-center tab-space" >
                           <ngb-tab>
-                            <ng-template ngbTabTitle>
-                              <i class="now-ui-icons design_image"></i>
+                            <ng-template  ngbTabTitle>
+                              <i class="now-ui-icons design_image" ></i>
                             </ng-template>
-                              <ng-template ngbTabContent>
-                                <div class="row">
+                              <ng-template  ngbTabContent>
+                                <div class="row" >
                                   <div class="col-md-10 ml-auto mr-auto">
                                       <div class="row collections">
                                           <div *ngFor='let car of carsOutSide'  class="col-md-6">
                                               <img src={{car}} alt="" class="img-raised"> 
+                                              <button
+                                              id="button"
+                                              type="button"
+                                              class="btn btn-default btn-tooltip"
+                                              (click)='deleteReservation(car)'
+                                              style="background-color: blueviolet; margin-top: 5px;">
+                                              delete                                           
+                                            </button>
                                           </div>
                                           
                                       </div>

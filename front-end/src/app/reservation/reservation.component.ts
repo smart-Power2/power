@@ -37,6 +37,7 @@ export class ReservationComponent implements OnInit {
     var {year, month, day} = this.returnItAt
     this.returnItAt = new Date(year, month, day)
     const data = {
+      // id:null,
       takeItAt: this.takeItAt,
       returnItAt: this.returnItAt,
       car: parseInt(this.route.snapshot.paramMap.get("id")),

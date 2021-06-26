@@ -1,3 +1,11 @@
 .container{
-    margin-top: 120px;
+    margin-top: 100px;
+}
+#carousel{
+    display: flex;
+    
+}
+.d-block{
+    height: 475px;
+    width: 1500px;
 }
