@@ -4,6 +4,7 @@ import { CarController } from './car.controller';
 import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Car } from './car.entity';
+// import { Car } from './entities/car.entity'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Car])],

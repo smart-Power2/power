@@ -22,9 +22,14 @@ import { FormComponent } from './form/form.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SuccessUrlComponent } from '../app/success-url/success-url.component';
 import { FailUrlComponent } from '../app/fail-url/fail-url.component';
+import { ListCarComponent } from './list-car/list-car.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { RatingComponent } from './rating/rating.component';
+
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent, PaymentComponent, SuccessUrlComponent,
-    FailUrlComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent,PaymentComponent,SuccessUrlComponent,FailUrlComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -35,6 +40,7 @@ import { FailUrlComponent } from '../app/fail-url/fail-url.component';
     ComponentsModule,
     ExamplesModule,
     ReactiveFormsModule,
+
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {
