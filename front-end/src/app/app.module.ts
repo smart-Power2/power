@@ -20,9 +20,11 @@ import { SearchComponent } from './search/search.component';
 import {PostService} from './post.service';
 import { FormComponent } from './form/form.component';
 import { PaymentComponent } from './payment/payment.component';
-
+import { SuccessUrlComponent } from '../app/success-url/success-url.component';
+import { FailUrlComponent } from '../app/fail-url/fail-url.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent, PaymentComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent, PaymentComponent, SuccessUrlComponent,
+    FailUrlComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,

@@ -12,11 +12,15 @@ import { SignupComponent } from "./signup/signup.component";
 import { SearchComponent } from "./search/search.component";
 import {FormComponent} from './form/form.component';
 import { PaymentComponent } from './payment/payment.component';
+import { SuccessUrlComponent } from '../app/success-url/success-url.component';
+import { FailUrlComponent } from '../app/fail-url/fail-url.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "index", pathMatch: "full" },
   { path: 'form', component: FormComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'payment/failPayment',    component: FailUrlComponent },
+  { path: 'payment/successPayment',    component: SuccessUrlComponent },
   { path: "index", component: ComponentsComponent },
   { path: "search", component: SearchComponent },
   { path: "signup", component: SignupComponent },

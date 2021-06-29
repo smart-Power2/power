@@ -12,9 +12,14 @@ export class PostService {
     headers: new HttpHeaders({}),
   };
   private carUrl = 'http://localhost:3000/car/create';
+  private apiUrl = "https://api.preprod.konnect.network/api/v1/payments/init-payment";
   constructor(private http: HttpClient) {}
 
   addCar(car: any): Observable<Car> {
     return this.http.post<Car>(this.carUrl, car);
+  }
+  postPayment (detail:any): Observable<any> {
+    console.log(detail);
+    return this.http.post<any>(this.apiUrl, detail);
   }
 }
