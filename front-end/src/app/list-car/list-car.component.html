@@ -1,5 +1,9 @@
 <div>
-<div *ngFor="let car of cars" id="container">
+	<form id='x' class="form-inline waves-light" mdbWavesEffect>
+		<div class="md-form mt-0">
+		  <input [(ngModel)]='brand' (input)='serach()' #myInput class="form-control mr-sm-2" type="text" placeholder="Search">
+		</div>
+	  </form><div *ngFor="let car of cars" id="container">
   <div class="product-details">
     <h1>{{ car.brand }} {{ car.model }}</h1>
     <span class="hint-star star">
