@@ -13,8 +13,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { CarTableComponent } from '../../car-table/car-table.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -33,6 +33,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+    CarTableComponent,
   ]
 })
 
