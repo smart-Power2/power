@@ -33,11 +33,10 @@ export class ReservationComponent implements OnInit {
     }
   addReservation() {
     var {year, month, day} = this.takeItAt
-    this.takeItAt = new Date(year, month, day)
+    this.takeItAt = new Date(year, month-1, day)
     var {year, month, day} = this.returnItAt
-    this.returnItAt = new Date(year, month, day)
+    this.returnItAt = new Date(year, month-1, day)
     const data = {
-      // id:null,
       takeItAt: this.takeItAt,
       returnItAt: this.returnItAt,
       car: parseInt(this.route.snapshot.paramMap.get("id")),

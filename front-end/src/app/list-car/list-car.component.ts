@@ -43,17 +43,4 @@ export class ListCarComponent implements OnInit {
     this.getCars()
   }
   
-
-//   search (){
-//     if(this.name!==""){
-//      this.cars = this.cars.filter(res=>res.brand.toLocaleLowerCase().match(this.name.toLocaleLowerCase()))
-//       this.ngOnInit()
-//       console.log(this.name);
-      
-//     }else if (this.name==''){
-//       this.getCars()
-//     }
-// };
-
-  
 }

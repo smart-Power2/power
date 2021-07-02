@@ -21,8 +21,10 @@ import { ListCarComponent } from './list-car/list-car.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { RatingComponent } from './rating/rating.component';
+import {FeedbackComponent} from './feedback/feedback.component';
+import { MapComponent } from './map/map.component'
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent],
+  declarations: [AppComponent,FeedbackComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent, MapComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -33,7 +35,6 @@ import { RatingComponent } from './rating/rating.component';
     ComponentsModule,
     ExamplesModule,
     ReactiveFormsModule,
-
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {

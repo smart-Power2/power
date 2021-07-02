@@ -151,7 +151,6 @@ font-family: 'EB Garamond', serif;
 	position: relative;
 	overflow: hidden;
 	height: 100%;
-	float: right;
 	width: 60%;
 	display: inline-block;
 }
