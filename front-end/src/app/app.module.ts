@@ -19,9 +19,15 @@ import { ValidateService } from './services/validate.service';
 import { SearchComponent } from './search/search.component';
 import {PostService} from './post.service';
 import { FormComponent } from './form/form.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ListCarComponent } from './list-car/list-car.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { RatingComponent } from './rating/rating.component';
+
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent,FormComponent,PaymentComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -32,6 +38,7 @@ import { FormComponent } from './form/form.component';
     ComponentsModule,
     ExamplesModule,
     ReactiveFormsModule,
+
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {

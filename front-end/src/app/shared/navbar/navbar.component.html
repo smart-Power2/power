@@ -11,10 +11,28 @@
           <span class="button-bar"></span>
         </a>
         <div ngbDropdownMenu>
-          <a class="dropdown-header">Dropdown header</a>
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" routerLink='/examples/profile'><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-people-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"
+            />
+            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+          </svg> profile</a>
+          <a  routerLink='/index' class="dropdown-item" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg> Home Page</a>
+          <a routerLink='/allcars'class="dropdown-item" href="#"><i class="fas fa-car"></i> List of Cars</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Separated link</a>
           <div class="dropdown-divider"></div>
@@ -24,7 +42,7 @@
     </div>
     <div class="navbar-translate">
       <!-- ngbTooltip="Designed by Invision. Coded by Creative Tim" -->
-      <a class="navbar-brand" [routerLink]="['/index']" placement="bottom">
+      <a class="navbar-brand" routerLink="/index" placement="bottom">
         Billio Rich
       </a>
       <button
@@ -45,7 +63,7 @@
     <div
       class="collapse navbar-collapse"
       data-nav-image="assets/img/blurred-image-1.jpg"
-      data-color="orange"
+      data-color="red"
     >
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -60,7 +78,7 @@
             <p>Contact A Live Superior</p>
           </a>
         </li> -->
-        <li class="nav-item" *ngIf="!userService.loggedIn()">
+        <li  class="nav-item" *ngIf="!userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
             type="button"
@@ -83,7 +101,7 @@
             type="button"
             (click)="btnClick()"
           >
-            <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
+            <i class="now-ui-icons ui-2_favourite-28"></i>Sign Up
           </button>
         </li>
         <li class="nav-item" *ngIf="userService.loggedIn()">
@@ -96,11 +114,19 @@
           </button>
         </li>
         <li class="nav-item">
-          <a routerLink='/form' class="nav-link btn btn-neutral" >
+          <a routerLink='/form' class="btn btn-primary btn-round" >
             <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
 
             <i class="now-ui-icons objects_key-25"></i>
             <p>Company</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/payment' class="btn btn-primary btn-round" >
+            <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
+
+            <i class="now-ui-icons objects_key-25"></i>
+            <p>Payment</p>
           </a>
         </li>
         <li class="nav-item">

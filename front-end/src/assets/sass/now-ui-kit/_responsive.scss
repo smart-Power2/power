@@ -16,7 +16,7 @@
             }
 
             .wrapper{
-                @include transform-translate-x(-150px);
+                @include transform-translate-x(-300px);
             }
 
             .navbar-translate{
@@ -33,7 +33,7 @@
                 }
 
                 .wrapper{
-                    @include transform-translate-x(150px);
+                    @include transform-translate-x(200px);
                 }
 
                 #bodyClick{

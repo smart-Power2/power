@@ -1,0 +1,62 @@
+<div style="display: flex ; justify-content: center ;" >
+  <div *ngIf="car" class="section" id="carousel" >
+    <div class="container">
+      <div class="title">
+        <h4>{{ car.brand }} {{ car.model }}</h4>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8 img-container">
+          <!-- <ngb-carousel>
+            <ng-template ngbSlide>
+              <img class="d-block" src="{{ car.file1 }}" alt="First slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>inside</h5>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img class="d-block" src="{{ car.file2 }}" alt="Second slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>left side</h5>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img class="d-block" src="{{ car.file3 }}" alt="Third slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>right side</h5>
+              </div>
+            </ng-template>
+          </ngb-carousel> -->
+          <img class="d-block" src="{{ car.file }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="car" class="section section-nucleo-icons">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12" style="white-space: nowrap; ">
+          <h2 class="title">Performance</h2>
+          <h5 class="description">seats : {{ car.seats }}</h5>
+          <h5 class="description">doors : {{ car.doors }}</h5>
+          <h5 class="description">suitcases : {{ car.suitcases }}</h5>
+          <h5 class="description">transmission : {{ car.transmission }}</h5>
+          <h5 class="description">aircond : {{ car.airconditioner }}</h5>
+          <div class="nucleo-container">
+            <img src="assets/img/nucleo.svg" alt="" />
+            <!-- <a
+                class="btn btn-primary btn-round btn-lg"
+                >Reserve now</a
+              >
+              <a
+                href="https://nucleoapp.com/?ref=1712"
+                class="btn btn-primary btn-simple btn-round btn-lg"
+                target="_blank"
+                >View All Icons</a
+              > -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

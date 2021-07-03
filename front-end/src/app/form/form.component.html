@@ -1,85 +1,131 @@
-<div class="card">
-  <form class="form-car" [formGroup]="carForm" (ngSubmit)="registerCar()">
-    <div class="title"><h1>Create Car Form</h1></div>
-    <label for="brand">brand</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="brand"
-      name="brand"
-    />
-    <label for="model">model</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="model"
-      name="model"
-    />
-    <label for="engine">engine</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="engine"
-      name="engine"
-    />
-    <label for="price">price</label>
-    <input
-      type="number"
-      class="form-control"
-      formControlName="price"
-      name="price"
-    />
-    <label for="seats">seats</label>
-    <input
-      type="number"
-      class="form-control"
-      formControlName="seats"
-      name="seats"
-    />
-    <label for="doors">doors</label>
-    <input
-      type="number"
-      class="form-control"
-      formControlName="doors"
-      name="doors"
-    />
-    <label for="suitcases">suitcases</label>
-    <input
-      type="number"
-      class="form-control"
-      formControlName="suitcases"
-      name="suitcases"
-    />
-    <label for="airconditioner">airconditioner</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="airconditioner"
-      name="airconditioner"
-    />
-    <label for="transmission">transmission</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="transmission"
-      name="transmission"
-    />
-    <label for="image">image</label>
-    <span class="image-upload">
-      <label for="file-input">
-        <i  class="fa fa-upload" aria-hidden="true"></i>
-      </label>
-    
-      <input
-      id="file-input"
-      type="file"
-      name="file"
-      (change)="onFileSelected($event)"
-      
-    />
-    </span>
-    <button type="submit" id="button" class="btn btn-block btn-primary">
-      Submit
-    </button>
+<div id="div" class="container register">
+  <form [formGroup]="carForm" (ngSubmit)="registerCar()">
+    <div class="row">
+      <div class="col-md-3 register-left">
+        <h3>Welcome</h3>
+        <p>Post your Car in 30 Seconds!</p>
+      </div>
+      <div class="col-md-9 register-right">
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            <h3 class="register-heading">Post a car</h3>
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="brand"
+                    name="brand"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="model"
+                    name="model"
+                  />
+                </div>
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    formControlName="engine"
+                    required
+                  >
+                    <option value="" class="hidden" selected disabled>
+                      Engine
+                    </option>
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="price"
+                    name="price"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="seats"
+                    name="seats"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="doors"
+                    name="doors"
+                  />
+                </div>
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    formControlName="suitcases"
+                    required
+                  >
+                    <option value="" class="hidden" selected disabled>
+                      Suitcases
+                    </option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    formControlName="airconditioner"
+                    required
+                  >
+                    <option value="" class="hidden" selected disabled>
+                      Air Conditioner
+                    </option>
+                    <option>Available</option>
+                    <option>Not</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    formControlName="transmission"
+                    required
+                  >
+                    <option value="" class="hidden" selected disabled>
+                      Transmission
+                    </option>
+                    <option>Manuel</option>
+                    <option>Auto</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    id="file-input"
+                    type="file"
+                    name="file"
+                    (change)="onFileSelected($event)"
+                  />
+                </div>
+                <input type="submit" class="btnRegister" value="Submit" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </form>
 </div>

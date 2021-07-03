@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         if (data) {
           console.log("hello", data);
-          this.userService.storeUserData(data["access_token"]);
+          this.userService.storeUserData(data["access_token"],data["user_id"]);
           // console.log(
           //   "khalil",
           //   this.userService.storeUserData(
