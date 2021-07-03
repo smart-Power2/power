@@ -11,7 +11,7 @@ import * as bcrypt from 'bcrypt';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>,
+    private userRepository: Repository<User>,
   ) {}
 
   // private readonly users = [
@@ -43,10 +43,10 @@ export class UserService {
 
   async findOne(email: string): Promise<User | undefined> {
     console.log(email);
-    return this.usersRepository.findOne({ email: email });
+    return this.userRepository.findOne({ email: email });
   }
   findOne1(id: number): Promise<User> {
-    return this.usersRepository.findOne(id);
+    return this.userRepository.findOne(id);
   }
 
   async create(createUserDto: CreateUserDto) {
@@ -57,7 +57,7 @@ export class UserService {
     user.phoneNumber = createUserDto.phoneNumber;
     user.password = createUserDto.password;
     user.type = createUserDto.type;
-    await this.usersRepository.save(user);
+    await this.userRepository.save(user);
     return user;
   }
 
@@ -66,7 +66,7 @@ export class UserService {
     const saltOrRounds = 10;
     const hash = await bcrypt.hash(createUserDto.password, saltOrRounds);
     const email = createUserDto.email;
-    const findlogin = await this.usersRepository.findOne({ email: email });
+    const findlogin = await this.userRepository.findOne({ email: email });
 
     if (findlogin) {
       return JSON.stringify({ msg: 'This email exists' });
@@ -95,15 +95,15 @@ export class UserService {
   }
 
   findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+    return this.userRepository.find();
   }
 
   // findOne(id: number): Promise<User> {
-  //   return this.usersRepository.findOne(id);
+  //   return this.userRepository.findOne(id);
   // }
 
   async remove(id: number): Promise<void> {
-    await this.usersRepository.delete(id);
+    await this.userRepository.delete(id);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

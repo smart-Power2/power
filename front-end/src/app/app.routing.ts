@@ -12,6 +12,8 @@ import { ProfileComponent } from "./examples/profile/profile.component";
 import { NucleoiconsComponent } from "./components/nucleoicons/nucleoicons.component";
 import { SignupComponent } from "./signup/signup.component";
 import { SearchComponent } from "./search/search.component";
+import {FormComponent} from './form/form.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ReservationComponent } from './reservation/reservation.component';
 
 import { ListCarComponent } from './list-car/list-car.component';
@@ -19,6 +21,8 @@ import { ListCarComponent } from './list-car/list-car.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "index", pathMatch: "full" },
+  { path: 'form', component: FormComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: "index", component: ComponentsComponent },
   { path: 'allcars',    component: ListCarComponent },
   { path: 'car/:id',      component: CarDetailComponent },

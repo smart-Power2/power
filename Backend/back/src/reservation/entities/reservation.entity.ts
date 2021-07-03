@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn , OneToMany  ,  JoinColumn, ManyToOne} from 'typeorm';
 import{User} from '../../user/user.entity'
-import {Car} from '../../car/entities/car.entity'
+import {Car} from '../../car/car.entity'
 
 @Entity()
 export class Reservation {
