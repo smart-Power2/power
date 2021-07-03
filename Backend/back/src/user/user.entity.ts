@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn ,OneToMany, ManyToOne} from 'typeorm';
-import {Car} from '../car/entities/car.entity'
+import {Car} from '../car/car.entity'
 import {Reservation} from '../reservation/entities/reservation.entity'
 
 @Entity()

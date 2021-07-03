@@ -46,7 +46,7 @@ export class UserService {
     return this.userRepository.findOne({ email: email });
   }
   findOne1(id: number): Promise<User> {
-    return this.usersRepository.findOne(id);
+    return this.userRepository.findOne(id);
   }
 
   async create(createUserDto: CreateUserDto) {

@@ -1,6 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn , ManyToOne } from 'typeorm';
+import { User } from 'src/user/user.entity';
 @Entity()
 export class Car {
+
+  @ManyToOne(() => User, user => user.FirstName) 
+  users: User[];
+
   @PrimaryGeneratedColumn()
   id: number;
 
