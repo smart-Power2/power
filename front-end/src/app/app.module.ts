@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; // this is needed!
 import { NgModule } from "@angular/core";
-import { FormsModule , ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing";
@@ -17,12 +17,17 @@ import { AuthGuard } from "./auth.guard";
 import { JwtModule } from "@auth0/angular-jwt";
 import { ValidateService } from './services/validate.service';
 import { SearchComponent } from './search/search.component';
+import {PostService} from './post.service';
+import { FormComponent } from './form/form.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ListCarComponent } from './list-car/list-car.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { RatingComponent } from './rating/rating.component';
+import {FeedbackComponent} from './feedback/feedback.component';
+import { MapComponent } from './map/map.component'
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent],
+  declarations: [AppComponent,FeedbackComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent, RatingComponent, MapComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -33,7 +38,6 @@ import { RatingComponent } from './rating/rating.component';
     ComponentsModule,
     ExamplesModule,
     ReactiveFormsModule,
-
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {
@@ -46,7 +50,7 @@ import { RatingComponent } from './rating/rating.component';
       positionClass :'toast-bottom-right'
     })
   ],
-  providers: [UserService, ValidateService, AuthGuard],
+  providers: [UserService, ValidateService, AuthGuard,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

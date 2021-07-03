@@ -35,7 +35,6 @@ login: boolean = false;
                 if (number > 150 || window.pageYOffset > 150) {
                     navbar.classList.remove('navbar-transparent');
                 } else if (_location !== 'login' && this.location.path() !== '/nucleoicons') {
-                    // remove logic
                     navbar.classList.add('navbar-transparent');
                 }
             });
