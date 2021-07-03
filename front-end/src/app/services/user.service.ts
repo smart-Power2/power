@@ -51,16 +51,18 @@ export class UserService {
   }
 
   getProfile() {
+    const id = Number(localStorage.getItem('user_id'))
     this.loadToken();
     let headers = new HttpHeaders({
       Authorization: this.authToken,
       "Content-Type": "application/json"
     });
-    return this.http.get(this.rootUrl + "/profile", { headers: headers });
+    return this.http.get(this.rootUrl + `/user/${id}`, { headers: headers });
   }
 
-  storeUserData(token: string) {
+  storeUserData(token: string , user_id:string) {
     localStorage.setItem("id_token", token);
+    localStorage.setItem("user_id",user_id)
     // localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     return this.authToken;
@@ -76,10 +78,13 @@ export class UserService {
   loadToken() {
     const token = localStorage.getItem("id_token");
     this.authToken = token;
+    return this.authToken
   }
 
   loggedIn() {
     let token = localStorage.getItem("id_token") || undefined;
     return !helper.isTokenExpired(token);
   }
+
+  
 }

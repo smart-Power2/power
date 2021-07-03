@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { Car } from './car/entities/car.entity';
+import { Rating } from './rating/entities/rating.entity';
 import { AuthModule } from './auth/auth.module';
 import { CarModule } from './car/car.module';
 import { ReservationModule } from './reservation/reservation.module';
@@ -21,7 +22,7 @@ import { RatingModule } from './rating/rating.module';
       username: 'root',
       password: 'root',
       database: 'power',
-      entities: [User,Car , Reservation],
+      entities: [ User , Car , Reservation ,Rating],
       synchronize: true,
     }),
     AuthModule,
