@@ -27,7 +27,6 @@ const routes: Routes = [
   { path: 'allcars',    component: ListCarComponent },
   { path: 'car/:id',      component: CarDetailComponent },
   { path: 'reservation/:id',       component: ReservationComponent },
-
   { path: "search", component: SearchComponent },
   { path: "signup", component: SignupComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },

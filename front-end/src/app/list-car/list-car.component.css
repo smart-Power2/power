@@ -127,7 +127,10 @@ font-family: 'EB Garamond', serif;
 .btn .price {
 	transform: translateX(-10%); padding-right: 15px;
 }
-
+#x{
+	margin-top: 100px;
+	margin-left:500px;
+}
 .btn .shopping-cart {
 	transform: translateX(-100%);
   position: absolute;

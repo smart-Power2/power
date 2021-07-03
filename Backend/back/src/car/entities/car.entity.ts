@@ -7,10 +7,12 @@
 //   @PrimaryGeneratedColumn()
 //   id: number;
 
+
 //   @ManyToOne(() => User, user => user.FirstName) 
 //   users: User[
     
 //   ];
+
 
 //   @Column()
 //   brand: string;
