@@ -1,6 +1,8 @@
 <div class="reserve">
-  <div id='t' class="col-md-6">
-      <h4>Datetimepicker</h4>    
+  <div  id='t' class="col-md-6">
+  
+      <h4>Datetimepicker</h4>
+      
       <div class="row">
         <div class="col-md-6">
           <div class="datepicker-container">
@@ -8,7 +10,8 @@
               <label>take it at</label>
   
               <input
-                class="form-control datetimepicker"
+                id="x"
+                class="form-control datetimepicker takeItAt"
                 placeholder="06/07/2017"
                 name="takeItAt"
                 ngbDatepicker
@@ -16,6 +19,7 @@
                 (click)="d.toggle()"
                 [(ngModel)]="takeItAt"
                 data-color="orange"
+                
               />
             </div>
           </div>
@@ -30,7 +34,8 @@
               <label>return it at</label>
   
               <input
-                class="form-control datetimepicker"
+                id="y"
+                class="form-control datetimepicker returnItAt"
                 placeholder="06/07/2017"
                 name="returnItAt"
                 ngbDatepicker
@@ -44,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div id = 'ti'class="sx-fleetlist-row-bottom wrap">
+    <div  id = 'ti'class="sx-fleetlist-row-bottom wrap">
       <div class="sx-fleetlist-button">
         <button
           id="button"
@@ -56,14 +61,24 @@
           Reserve 
         </button>
        
+        <button
+          id="button"
+          type="button"
+          class="btn btn-default btn-tooltip"
+          (click)='editPrice(perDay)'
+          style="background-color: blueviolet;"
+        >
+          See Price 
+        </button>
+       
       </div>
       <div class="clear"></div>
     </div>
   </div>
-<div *ngIf='car ' class="section" id="carousel">
+<div *ngIf='car' class="section" id="carousel">
   <div class="container">
     <div class="title">
-      <h2>{{car.price}} dt</h2>
+      <h2 *ngIf='perDay'>{{car.price*perDay}} dt</h2>
 
       <h4>{{car.brand}}</h4>
     </div>
@@ -73,14 +88,14 @@
           <ng-template ngbSlide>
             <img
               class="d-block"
-              src={{car.file1}}
+              src={{car.file}}
               alt="First slide"
             />
             <div class="carousel-caption d-none d-md-block">
               <h5>inside</h5>
             </div>
           </ng-template>
-          <ng-template ngbSlide>
+          <!-- <ng-template ngbSlide>
             <img
               class="d-block"
               src={{car.file2}}
@@ -99,7 +114,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5>right side</h5>
             </div>
-          </ng-template>
+          </ng-template> -->
         </ngb-carousel> 
       </div>
     </div>

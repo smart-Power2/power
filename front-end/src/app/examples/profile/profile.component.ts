@@ -14,7 +14,7 @@ import { Router } from "@angular/router";
 export class ProfileComponent implements OnInit {
   user: User = null;
   carsOutSide: Car[] = [];
-  carsInSide: Car[] = [];
+  // carsInSide: Car[] = [];
   zoom: number = 14;
   lat: number = 44.445248;
   lng: number = 26.099672;
@@ -65,6 +65,7 @@ export class ProfileComponent implements OnInit {
     const id = Number(localStorage.getItem("user_id"));
     console.log(id);
     this.reservationService.getReservation().subscribe((ele) => {
+<<<<<<< HEAD
       console.log(ele.length)
       for (let i = 0; i < ele.length; i++) {
         if(ele[i].user){
@@ -74,6 +75,14 @@ export class ProfileComponent implements OnInit {
             this.carsInSide.push(ele[i].car.file2);
             
           }
+=======
+      console.log(ele)
+      for (var i = 0; i < ele.length; i++) {
+        if (ele[i].user.id === id) {
+          
+          this.carsOutSide.push(ele[i].car.file);
+          // this.carsInSide.push(ele[i].car.file2);
+>>>>>>> d93e9f1b29470aaa1761b7195ceed02eaf35dd52
         }
 
       }
@@ -84,11 +93,11 @@ export class ProfileComponent implements OnInit {
     this.reservationService.getReservation().subscribe((ele) => {
       console.log('here',ele)
       for (var i = 0; i < ele.length; i++) {
-        console.log(ele[i].car.file1 === str)
-       if (ele[i].car.file1===str){
+        console.log(ele[i].car.file === str)
+       if (ele[i].car.file===str){
         this.reservationService.removeReservation(ele[i].id).subscribe(car => {
           this.carsOutSide= this.carsOutSide.filter(e=>e!==str)
-          this.carsInSide= this.carsInSide.filter(e=>e!==ele[i].car.file2)
+          // this.carsInSide= this.carsInSide.filter(e=>e!==ele[i].car.file2)
           })
         return ;
        }

@@ -19,7 +19,14 @@
 //     fixture.detectChanges();
 //   });
 
+<<<<<<< HEAD
 //   it('should create', () => {
 //     expect(component).toBeTruthy();
 //   });
 // });
+=======
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+>>>>>>> d93e9f1b29470aaa1761b7195ceed02eaf35dd52

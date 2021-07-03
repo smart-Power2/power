@@ -1,0 +1,107 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Table of customers</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  Phone-Number
+                </th>
+                
+              </thead>
+              <tbody>
+                <tr *ngFor='let user of customers'   >
+                  <td>
+                    {{user.FirstName}}  {{user.LastName}}
+                  </td>
+                  <td>
+                    {{user.email}}
+                  </td>
+                  <td>
+                   +216{{user.phoneNumber}}
+                  </td>
+                  <td>
+                    <button
+          id="button"
+          type="button"
+          class="btn btn-default btn-tooltip"
+          (click)='editPrice(perDay)'
+          style="background-color: blueviolet;"
+          routerLink='/user-profile/{{user.id}}'
+
+        >
+          See Profile 
+        </button>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-header">
+          <h4 class="card-title"> Table of Companies</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  Country
+                </th>
+                <th>
+                  City
+                </th>
+                
+              </thead>
+              <tbody>
+                <tr *ngFor='let user of companies'>
+                  <td>
+                    {{user.FirstName}}  {{user.LastName}}
+                  </td>
+                  <td>
+                    {{user.email}}
+                  </td>
+                  <td>
+                   +216{{user.phoneNumber}}
+                  </td>
+                  <td>
+                    <button
+          id="button"
+          type="button"
+          class="btn btn-default btn-tooltip"
+          style="background-color: blueviolet;"
+          routerLink='/user-profile/{{user.id}}'
+        >
+          See Profile 
+        </button>
+                  </td>
+                </tr>                  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

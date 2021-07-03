@@ -43,6 +43,7 @@
     "jquery": "3.5.1",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "leaflet": "^1.7.1",
+    "moment": "^2.29.1",
     "ng2-nouislider": "1.8.2",
     "ngx-toastr": "^14.0.0",
     "nouislider": "14.6.3",

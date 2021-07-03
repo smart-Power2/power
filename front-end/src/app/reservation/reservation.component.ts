@@ -10,27 +10,35 @@ import { Car } from "app/car";
   styleUrls: ["./reservation.component.css"],
 })
 export class ReservationComponent implements OnInit {
-  car:Car
-  takeItAt:any
-  returnItAt:any
+  car: Car;
+  takeItAt: any;
+  returnItAt: any;
+  perDay :any= 0;
 
-  reservation : Reservation[] =[]
+  reservation: Reservation[] = [];
   reservationForm: FormGroup;
-  constructor(private ReservationService: ReservationService,public fb: FormBuilder,private route: ActivatedRoute
+  constructor(
+    private ReservationService: ReservationService,
+    public fb: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getCar()
+    this.getCar();
+    this.editPrice();
   }
 
-    getCar(){
-      const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-      this.ReservationService.getCar(id)
-      .subscribe(car => this.car = car);
-    }
-    editPrice(){
-      
-    }
+  getCar() {
+    const id = parseInt(this.route.snapshot.paramMap.get("id")!);
+    this.ReservationService.getCar(id).subscribe((car) => (this.car = car));
+  }
+  editPrice() {
+    
+    // var take: any = document.getElementById("x").value;
+    // var ret: any = document.getElementById("y").value;
+    
+    // this.perDay = Number(ret.split("-")[2]) - Number(take.split("-")[2]);
+  }
   addReservation() {
     var {year, month, day} = this.takeItAt
     this.takeItAt = new Date(year, month-1, day)
@@ -40,15 +48,14 @@ export class ReservationComponent implements OnInit {
       takeItAt: this.takeItAt,
       returnItAt: this.returnItAt,
       car: parseInt(this.route.snapshot.paramMap.get("id")),
-      user:+localStorage.getItem('user_id')
-    }
-    
-    console.log((JSON.stringify(data.returnItAt).split('-')[3]))
+      user: +localStorage.getItem("user_id"),
+    };
+
+    console.log(JSON.stringify(data.returnItAt).split("-")[3]);
     console.log(data);
 
     this.ReservationService.addReservation(data).subscribe((newReservation) => {
       this.reservation.push(newReservation);
-    
     });
-  } 
+  }
 }

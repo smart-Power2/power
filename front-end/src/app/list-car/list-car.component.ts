@@ -10,9 +10,10 @@ import { CarService } from '../car.service';
   styleUrls: ['./list-car.component.css']
 })
 export class ListCarComponent implements OnInit {
+   brand : string 
    noMore:boolean=true
    currentRate = 8;
-   curentCars=1
+   curentCars=3
    cars:Car[]=[];
    allCars:Car[]=[]
    name:string; 
@@ -43,4 +44,18 @@ export class ListCarComponent implements OnInit {
     this.getCars()
   }
   
+<<<<<<< HEAD
+=======
+
+//   search (){
+//     if(this.brand!==""){
+//      this.allCars = this.allCars.filter(res=>res.brand.toLocaleLowerCase().match(this.brand.toLocaleLowerCase()))
+//       this.ngOnInit()
+//       console.log(this.brand);
+//       this.getCars()
+//     }
+// };
+
+  
+>>>>>>> d93e9f1b29470aaa1761b7195ceed02eaf35dd52
 }

@@ -8,7 +8,5 @@ export class CreateCarDto {
     suitcases: number;
     airconditioner: string;
     transmission: string;
-    file1: string;
-    file2: string;
-    file3: string;
+    file: string;
 }

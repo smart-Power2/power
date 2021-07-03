@@ -8,7 +8,7 @@ import { NgForm } from "@angular/forms";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
   data: Date = new Date();
@@ -48,26 +48,17 @@ export class LoginComponent implements OnInit {
       (data) => {
         if (data) {
           console.log("hello", data);
-          this.userService.storeUserData(data["access_token"],data["user_id"]);
-          // console.log(
-          //   "khalil",
-          //   this.userService.storeUserData(
-          //     data["access_token"],
-          //     data["username"]
-          //   )
-          // );
+          this.userService.storeUserData(data["access_token"], data["user_id"]);
+
           this.toastr.success("Awesome!", "You are logged in!", {
-            timeOut: 4000
+            timeOut: 4000,
           });
+          
           this.router.navigate(["/"]);
-          // console.log(
-          //   "hello",
-          //   this.userService.storeUserData(data["access_token"])
-          // );
         } else {
           this.isLoginError = true;
           this.toastr.error("Oops!", this.email, {
-            timeOut: 4000
+            timeOut: 4000,
           });
         }
       },
