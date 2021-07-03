@@ -63,10 +63,8 @@ export class UserService {
   storeUserData(token: string , user_id:string) {
     localStorage.setItem("id_token", token);
     localStorage.setItem("user_id",user_id)
-    // localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     return this.authToken;
-    // this.user = user;
   }
 
   Logout() {
@@ -85,6 +83,4 @@ export class UserService {
     let token = localStorage.getItem("id_token") || undefined;
     return !helper.isTokenExpired(token);
   }
-
-  
 }

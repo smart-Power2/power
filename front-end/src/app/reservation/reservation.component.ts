@@ -40,10 +40,10 @@ export class ReservationComponent implements OnInit {
     // this.perDay = Number(ret.split("-")[2]) - Number(take.split("-")[2]);
   }
   addReservation() {
-    var { year, month, day } = this.takeItAt;
-    this.takeItAt = new Date(year, month, day);
-    var { year, month, day } = this.returnItAt;
-    this.returnItAt = new Date(year, month, day);
+    var {year, month, day} = this.takeItAt
+    this.takeItAt = new Date(year, month-1, day)
+    var {year, month, day} = this.returnItAt
+    this.returnItAt = new Date(year, month-1, day)
     const data = {
       takeItAt: this.takeItAt,
       returnItAt: this.returnItAt,

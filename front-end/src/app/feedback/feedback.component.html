@@ -1,0 +1,37 @@
+ <h4 class="title">PROVIDE US WITH YOUR FEEDBACK</h4>
+
+<Form class="form-feedback" [formGroup]="feedbackForm" (ngSubmit)="registerFeedback()" >
+    <input type="text" class="form-control" formControlName="content" placeholder="Write your feedback">
+    <button type="submit" class="btn btn-block btn-primary"> Submit </button>
+</Form>
+
+<div *ngFor='let feedback of feedback'>
+  <div class="card">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ngb-tabset [justify]="'center'" class="text-center">
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+            {{feedback.idUser}}
+            </ng-template>
+            <ng-template ngbTabContent>
+              <p>
+             {{feedback.content}}
+              </p>
+              <button (click)='deleteFeedback(feedback)' class="now-ui-icons ui-1_simple-remove">
+                    DELETE 
+              </button>
+            </ng-template>
+          </ngb-tab> 
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

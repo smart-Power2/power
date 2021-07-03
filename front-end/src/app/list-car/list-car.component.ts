@@ -44,6 +44,8 @@ export class ListCarComponent implements OnInit {
     this.getCars()
   }
   
+<<<<<<< HEAD
+=======
 
 //   search (){
 //     if(this.brand!==""){
@@ -55,4 +57,5 @@ export class ListCarComponent implements OnInit {
 // };
 
   
+>>>>>>> d93e9f1b29470aaa1761b7195ceed02eaf35dd52
 }

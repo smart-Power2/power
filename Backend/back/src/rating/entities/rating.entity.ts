@@ -1,7 +1,7 @@
 
 import { Entity, Column, PrimaryGeneratedColumn , OneToOne,OneToMany  ,  JoinColumn} from 'typeorm';
 import{User} from '../../user/user.entity'
-import {Car} from '../../car/entities/car.entity'
+import {Car} from '../../car/car.entity'
 
 @Entity()
 export class Rating {

@@ -41,7 +41,6 @@
       </div>
     </div>
     <div class="navbar-translate">
-      <!-- ngbTooltip="Designed by Invision. Coded by Creative Tim" -->
       <a class="navbar-brand" routerLink="/index" placement="bottom">
         Billio Rich
       </a>
@@ -67,6 +66,8 @@
       data-color="red"
     >
       <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
+=======
         <li class="nav-item">
           <button
             class="btn btn-primary btn-round"
@@ -82,6 +83,7 @@
             <p>Contact A Live Superior</p>
           </a>
         </li> -->
+>>>>>>> d93e9f1b29470aaa1761b7195ceed02eaf35dd52
         <li  class="nav-item" *ngIf="!userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
@@ -91,14 +93,6 @@
             Login
           </button>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link btn btn-neutral" target="_blank">
-            <i class="now-ui-icons arrows-1_share-66"></i>
-            <i class="now-ui-icons objects_key-25"></i>
-            <a [RouterLink]="['/signup']"  value="Sign Up" ></a>
-            <p type="button" (click)="btnClick();">Sign Up</p>
-          </a>
-        </li> -->
         <li class="nav-item" *ngIf="!loggedIn">
           <button
             class="btn btn-primary btn-round"
@@ -116,6 +110,22 @@
           >
             <i class="now-ui-icons ui-2_favourite-28"></i> Log Out
           </button>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/form' class="btn btn-primary btn-round" >
+            <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
+
+            <i class="now-ui-icons objects_key-25"></i>
+            <p>Company</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/payment' class="btn btn-primary btn-round" >
+            <!-- <i class="now-ui-icons arrows-1_share-66"></i> -->
+
+            <i class="now-ui-icons objects_key-25"></i>
+            <p>Payment</p>
+          </a>
         </li>
         <li class="nav-item">
           <a

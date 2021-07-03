@@ -54,8 +54,9 @@
                                 <div class="row" >
                                   <div class="col-md-10 ml-auto mr-auto">
                                       <div class="row collections">
-                                          <div *ngFor='let car of carsOutSide'  class="col-md-6">
-                                              <img src={{car}} alt="" class="img-raised"> 
+                                          <div *ngFor='let res of reservation;let i=index'  class="col-md-6">
+                                              <p>{{res.car.brand}}</p>
+                                              <img src={{res.car.file1}} alt="" class="img-raised"> 
                                               <button
                                               id="button"
                                               type="button"
@@ -63,6 +64,10 @@
                                               (click)='deleteReservation(car)'
                                               style="background-color: blueviolet; margin-top: 5px;">
                                               delete                                           
+                                            </button>
+                                        
+                                            <button (click)="nav(res.car.id)" *ngIf="compare(i)" >
+                                              Feedback
                                             </button>
                                           </div>
                                           
@@ -79,10 +84,10 @@
                                 <div class="row">
                                   <div class="col-md-10 ml-auto mr-auto">
                                       <div class="row collections">
-                                          <div *ngFor='let car of carsInSide' class="col-md-6">
+                                          <!-- <div *ngFor='let car of carsInSide' class="col-md-6">
                                               <img src={{car}} class="img-raised">
                                            
-                                          </div>
+                                          </div> -->
                                           
                                       </div>
                                   </div>
