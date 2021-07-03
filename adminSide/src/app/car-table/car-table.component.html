@@ -1,0 +1,91 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">All Cars</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>brand</th>
+                <th>model</th>
+                <th>engine</th>
+                <th>transmission</th>
+                <th>price</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let car of cars">
+                  <td>
+                    {{ car.brand }}
+                  </td>
+                  <td>
+                    {{ car.model }}
+                  </td>
+                  <td>
+                    {{ car.engine }}
+                  </td>
+                  <td>
+                    {{ car.transmission }}
+                  </td>
+                  <td>
+                    {{ car.price }} dt
+                  </td>
+                  <td>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-header">
+          <h4 class="card-title">Table of Reservation</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>Num Of Reservation</th>
+                <th>car brand</th>
+                <th>reserver</th>
+                <th>take it AT</th>
+                <th>return it AT</th>
+                <th>cost </th>
+                
+              </thead>
+              <tbody>
+                <tr *ngFor="let reservation of reservations">
+                  <td>{{ reservation.id }} </td>
+                  <td>
+                    {{ reservation.car.brand }} {{ reservation.car.model }}
+
+                  </td>
+                  <td>{{reservation.user.FirstName}} {{reservation.user.LastName}}</td>
+                  <td>{{reservation.takeItAt.split('T')[0]}} </td>
+                  <td>{{reservation.returnItAt.split('T')[0]}} </td>
+                  <td>{{(reservation.returnItAt.split('T')[0].split('-')[2]-reservation.takeItAt.split('T')[0].split('-')[2])*reservation.car.price}} dt </td>
+                  <td> <button
+                    id="button"
+                    type="button"
+                    class="btn btn-default btn-tooltip"
+                    style="background-color: blueviolet;"
+                    (click)='deleteReservation(reservation.id)'
+                  >
+                    delete 
+                  </button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

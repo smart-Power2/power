@@ -45,6 +45,7 @@
       <a class="navbar-brand" routerLink="/index" placement="bottom">
         Billio Rich
       </a>
+      
       <button
         class="navbar-toggler"
         type="button"
@@ -67,10 +68,13 @@
     >
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="" target="_blank">
-            <i class="now-ui-icons emoticons_satisfied"></i>
-            <p>Feedbacks</p>
-          </a>
+          <button
+            class="btn btn-primary btn-round"
+            type="button"
+            (click)="bClick()"
+          >
+            Find Cars
+          </button>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="" target="_blank">
