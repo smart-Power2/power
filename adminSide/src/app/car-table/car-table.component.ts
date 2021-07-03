@@ -32,4 +32,10 @@ export class CarTableComponent implements OnInit {
       console.log('this is reservation ',this.reservations,this.reservations[0].id)
     } )
   }
+
+  deleteReservation(id){
+    this.reservationService.removeReservation(id).subscribe(()=>{      
+      this.reservations=this.reservations.filter(e=>e.id!==id)
+    })
+  }
 }

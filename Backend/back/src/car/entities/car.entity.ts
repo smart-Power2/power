@@ -8,9 +8,7 @@ export class Car {
   id: number;
 
   @ManyToOne(() => User, user => user.FirstName) 
-  users: User[
-    
-  ];
+  users: User[];
 
   @Column()
   brand: string;

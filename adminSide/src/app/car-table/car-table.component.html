@@ -71,7 +71,15 @@
                   <td>{{reservation.takeItAt.split('T')[0]}} </td>
                   <td>{{reservation.returnItAt.split('T')[0]}} </td>
                   <td>{{(reservation.returnItAt.split('T')[0].split('-')[2]-reservation.takeItAt.split('T')[0].split('-')[2])*reservation.car.price}} dt </td>
-                  
+                  <td> <button
+                    id="button"
+                    type="button"
+                    class="btn btn-default btn-tooltip"
+                    style="background-color: blueviolet;"
+                    (click)='deleteReservation(reservation.id)'
+                  >
+                    delete 
+                  </button></td>
                 </tr>
               </tbody>
             </table>
