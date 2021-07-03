@@ -50,7 +50,5 @@ export class ReservationComponent implements OnInit {
       this.reservation.push(newReservation);
     
     });
-  }
-
-  
+  } 
 }
